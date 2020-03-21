@@ -8,10 +8,14 @@ Format markdown file
     - [X] Create covert file
     - [X] Read MD file
 - [ ] Save the change to MD file
-- [ ] Add`---` to the first line of the MD file
+    - [ ] Make Change to the MD file
+    - [ ] Save the change to `New` file
+- [ ] Add `---` to the first line of the MD file
 - [ ] Delete `thumbnail` in the file format
-- [ ] Batch to update MD files
-
+- [ ] Batch to update MD files in the `folder`
+    - [ ] read the list in the `folder`
+    - [ ] make the convert to the file in the list
+    - [ ] save the new file to the new `folder`
 
 ## Day by Day
 
