@@ -1,6 +1,13 @@
 # -*- coding: UTF-8 -*-
 
-sourceFilePath = "./source.md"
-sourceFileContent = open(sourceFilePath, "r").read()
+source = "./source.md"
+target = "./target.md"
 
-print(sourceFileContent)
+sourceFile = open(source, "r")
+targetFile = open(target,"w")
+
+targetFile.write("---\n" + sourceFile.read())
+
+
+targetFile.close()
+sourceFile.close()
