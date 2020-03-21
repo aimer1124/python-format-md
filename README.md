@@ -42,7 +42,9 @@ Format markdown file
     - [X] Make Change to the MD file
     - [X] Save the change to `New` file
 - [X] Add `---` to the first line of the MD file
-- [ ] Delete `thumbnail` in the file format
+- [X] Delete `thumbnail` in the file format
+    - [X] Find `thumbnail` line
+    - [X] Delete the line
 - [ ] Batch to update MD files in the `folder`
     - [ ] read the list in the `folder`
     - [ ] make the convert to the file in the list
@@ -60,6 +62,16 @@ Format markdown file
 
 - Make Change and save to new MD file
 - Add `---` to new MD file
+- Delete the line with `thumbnail`
 
+```
+lines = (i for i in sourceFile if 'thumbnail' not in i )
+
+targetFile.writelines(lines)
+
+```
+
+- Issue: Can't do change together
+- 
 ## 参考
 - 文件读写: [https://www.runoob.com/python/python-files-io.html](https://www.runoob.com/python/python-files-io.html)

@@ -5,6 +5,7 @@ tags:
 categories:
   - Tool
 date: 2016-02-29 20:14:00
+thumbnail: /img/test.png
 ---
 # Header
 

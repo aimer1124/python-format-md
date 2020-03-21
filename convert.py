@@ -6,8 +6,11 @@ target = "./target.md"
 sourceFile = open(source, "r")
 targetFile = open(target,"w")
 
-targetFile.write("---\n" + sourceFile.read())
+# targetFile.write("---\n" + sourceFile.read())
 
+lines = (i for i in sourceFile if 'thumbnail' not in i )
+
+targetFile.writelines(lines)
 
 targetFile.close()
 sourceFile.close()
