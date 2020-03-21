@@ -3,10 +3,10 @@ Format markdown file
 
 ## ToDo
 
-- [ ] Read MD file content
+- [X] Read MD file content
     - [X] Create source MD file
     - [X] Create covert file
-    - [ ] Read MD file
+    - [X] Read MD file
 - [ ] Save the change to MD file
 - [ ] Add`---` to the first line of the MD file
 - [ ] Delete `thumbnail` in the file format
@@ -19,3 +19,8 @@ Format markdown file
 
 - Set source md file, `source.md`
 - Create `convert.py` as convert controller
+- Use `open(file, "r").read()` to get MD file content
+
+
+## 参考
+- [文件读写]:[https://www.runoob.com/python/python-files-io.html](https://www.runoob.com/python/python-files-io.html)
