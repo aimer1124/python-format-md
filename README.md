@@ -1,5 +1,7 @@
 # python-format-md
-为什么做这个：需要把原来的文章内容从[Hexo](hexo.io/)转移至[Hugo](https://gohugo.io/)，但两者在MD文件头部处理不一致。
+
+为什么做这个：
+把原来博客的文章从[Hexo](hexo.io/)转移至[Hugo](https://gohugo.io/)，但两者在MD文件头部处理不一致。
 
 - Hexo格式
 
@@ -28,9 +30,10 @@ categories:
 date: 2016-02-29 20:14:00
 ---
 ```
-- 
 
-Format markdown file
+暂时发现，需要处理的内容有两处：
+- 在文件首行添加`---`
+- 删除MD文件Header中的`thumbnail`字段
 
 ## ToDo
 
@@ -88,4 +91,3 @@ targetFile.writelines(sourceFileList)
 ## 参考
 - 文件读写: [https://www.runoob.com/python/python-files-io.html](https://www.runoob.com/python/python-files-io.html)
 - PythonList: [https://www.runoob.com/python/python-lists.html](https://www.runoob.com/python/python-lists.html)
-- 
