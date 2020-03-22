@@ -66,12 +66,26 @@ Format markdown file
 
 ```
 lines = (i for i in sourceFile if 'thumbnail' not in i )
-
 targetFile.writelines(lines)
+```
+
+- Use `readlines` to convert file: `list.insert(index,obj)` for add `---` and `list.remove(obj)` for delete `thumbnail`
+
+```
+sourceFileList = sourceFile.readlines()
+
+sourceFileList.insert(0,"---\n")
+for line in sourceFileList:
+    print(line)
+    if "thumbnail" in line:
+        sourceFileList.remove(line)
+
+targetFile.writelines(sourceFileList)
 
 ```
 
-- Issue: Can't do change together
-- 
+
 ## 参考
 - 文件读写: [https://www.runoob.com/python/python-files-io.html](https://www.runoob.com/python/python-files-io.html)
+- PythonList: [https://www.runoob.com/python/python-lists.html](https://www.runoob.com/python/python-lists.html)
+- 

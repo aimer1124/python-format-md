@@ -6,11 +6,15 @@ target = "./target.md"
 sourceFile = open(source, "r")
 targetFile = open(target,"w")
 
-# targetFile.write("---\n" + sourceFile.read())
+sourceFileList = sourceFile.readlines()
 
-lines = (i for i in sourceFile if 'thumbnail' not in i )
+sourceFileList.insert(0,"---\n")
+for line in sourceFileList:
+    print(line)
+    if "thumbnail" in line:
+        sourceFileList.remove(line)
 
-targetFile.writelines(lines)
+targetFile.writelines(sourceFileList)
 
 targetFile.close()
 sourceFile.close()
