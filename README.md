@@ -33,7 +33,7 @@ date: 2016-02-29 20:14:00
 
 暂时发现，需要处理的内容有两处：
 - 在文件首行添加`---`
-- 删除MD文件Header中的`thumbnail`字段
+- 删除MD文件Header中的`thumbnail`字段（nice to have）
 
 ## ToDo
 
@@ -48,10 +48,10 @@ date: 2016-02-29 20:14:00
 - [X] Delete `thumbnail` in the file format
     - [X] Find `thumbnail` line
     - [X] Delete the line
-- [ ] Batch to update MD files in the `folder`
-    - [ ] read the list in the `folder`
-    - [ ] make the convert to the file in the list
-    - [ ] save the new file to the new `folder`
+- [X] Batch to update MD files in the `folder`
+    - [X] read the list in the `folder`
+    - [X] make the convert to the file in the list
+    - [X] save the new file to the new `folder`
 
 ## Day by Day
 
@@ -87,7 +87,48 @@ targetFile.writelines(sourceFileList)
 
 ```
 
+### Day 3
+
+- Refactor the code
+
+```
+def convert(sourceFile, targetFile):
+
+    sourceFile = open(source, "r")
+    targetFile = open(target,"w")
+
+    sourceFileList = sourceFile.readlines()
+
+    sourceFileList.insert(0,"---\n")
+    for line in sourceFileList:
+        # print(line)
+        if "thumbnail" in line:
+            sourceFileList.remove(line)
+
+    targetFile.writelines(sourceFileList)
+
+    targetFile.close()
+    sourceFile.close()
+```
+- Get the list in the folder 
+
+```
+import os
+sourceFileList = os.listdir(sourcePath)
+```
+
+- Convert the files
+
+```
+for fileName in sourceFileList:
+    print("Convert file: " + fileName)
+    target = "./target.md"
+
+    convert(sourcePath + fileName, targetPath + fileName)
+```
+
 
 ## 参考
 - 文件读写: [https://www.runoob.com/python/python-files-io.html](https://www.runoob.com/python/python-files-io.html)
-- PythonList: [https://www.runoob.com/python/python-lists.html](https://www.runoob.com/python/python-lists.html)
+- Python List: [https://www.runoob.com/python/python-lists.html](https://www.runoob.com/python/python-lists.html)
+- Python File: [https://www.runoob.com/python/os-listdir.html](https://www.runoob.com/python/os-listdir.html)
